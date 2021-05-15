@@ -1,13 +1,360 @@
-body {
+/* RESET */
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ol, ul {
+  list-style: none;
 }
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* IMPORT FONTS */
+@font-face {
+  font-family: Regular;
+  src: url(fonts/Rubik/static/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: Medium;
+  src: url(fonts/Rubik/static/Rubik-Medium.ttf);
+}
+
+@font-face {
+  font-family: Bold;
+  src: url(fonts/Rubik/static/Rubik-Bold.ttf);
+}
+
+@font-face {
+  font-family: Light;
+  src: url(fonts/Rubik/static/Rubik-Light.ttf);
+}
+
+/* GENERAL */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-size: 18px;
+}
+
+/* HEADER COMPONENT */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container #map {
+  width: 100%;
+  height: 66vh;
+  z-index: 1;
+}
+
+.container .name {
+  color: #969696;
+  font-size: 10px;
+  font-family: Medium;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header {
+  width: 100%;
+  height: 34vh;
+  background: url(images/pattern-bg.png) center center no-repeat;
+}
+
+.header p {
+  color: white;
+  letter-spacing: 1px;
+  padding: 2rem 0;
+  font-family: Medium;
+  text-align: center;
+}
+
+.header .search-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .search-box input {
+  width: 400px;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 17px;
+}
+
+.header .search-box input:hover {
+  cursor: pointer;
+}
+
+.header .search-box ::-webkit-input-placeholder {
+  color: #969696;
+}
+
+.header .search-box :-ms-input-placeholder {
+  color: #969696;
+}
+
+.header .search-box ::-ms-input-placeholder {
+  color: #969696;
+}
+
+.header .search-box ::placeholder {
+  color: #969696;
+}
+
+.header .search-box span {
+  display: block;
+  width: 45px;
+  height: 40px;
+  position: relative;
+  background-color: black;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.header .search-box span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url(images/icon-arrow.svg) center center no-repeat;
+}
+
+.header .search-box span:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.detailBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 800px;
+  min-height: 120px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  top: 24vh;
+  z-index: 11;
+}
+
+.detailBox .address_box, .detailBox .location_box, .detailBox .time_box, .detailBox .isp_box {
+  width: 200px;
+  color: #969696;
+  font-size: 13px;
+  font-family: Medium;
+  letter-spacing: 1px;
+  padding: 1.2rem 0 0 1.2rem;
+}
+
+.detailBox .address_box .contentBox, .detailBox .location_box .contentBox, .detailBox .time_box .contentBox, .detailBox .isp_box .contentBox {
+  color: #2b2b2b;
+  font-size: 15px;
+  font-family: Bold;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 60px;
+  width: 180px;
+  border-right: 1px solid #c9c9c9;
+  margin-bottom: 1.2rem;
+  padding: 0.6rem 1rem 0 0;
+}
+
+.detailBox .isp_box .contentBox {
+  border: none;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 920px) {
+  .container .detailBox {
+    width: 80%;
+  }
+  .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
+    width: 25%;
+  }
+  .container .detailBox div.contentBox {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .container .detailBox .contentBox {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .container .detailBox .contentBox {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container .detailBox {
+    width: 75%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+  }
+  .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
+    width: 140px;
+  }
+  .container .detailBox .isp_box {
+    padding-top: 0;
+  }
+  .container .detailBox .time_box .contentBox {
+    border-right: none;
+  }
+}
+
+@media only screen and (max-width: 559px) {
+  .container .header {
+    height: 40vh;
+    background-size: cover;
+  }
+  .container .header .search-box {
+    width: 75%;
+    margin: auto;
+  }
+  .container .header .search-box input {
+    width: 90%;
+  }
+  .container .header .search-box span {
+    width: 10%;
+  }
+  .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
+    width: 50%;
+  }
+  .container .detailBox .location_box .contentBox {
+    border-right: none;
+  }
+  .container .detailBox .time_box {
+    padding-top: 0;
+  }
+  .container .detailBox .time_box .contentBox {
+    border-right: 1px solid #c9c9c9;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .container #map {
+    height: 500px;
+  }
+  .container .header {
+    height: 50vh;
+  }
+  .container .header .search-box {
+    width: 65%;
+  }
+  .container .header .search-box input {
+    width: 87%;
+  }
+  .container .header .search-box span {
+    width: 13%;
+  }
+  .container .header .search-box ::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .container .header .search-box :-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .container .header .search-box ::-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .container .header .search-box ::placeholder {
+    font-size: 12px;
+  }
+  .container .detailBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 65%;
+  }
+  .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
+    padding-left: 0;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .container .detailBox .address_box span, .container .detailBox .location_box span, .container .detailBox .time_box span, .container .detailBox .isp_box span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .container .detailBox .address_box .contentBox, .container .detailBox .location_box .contentBox, .container .detailBox .time_box .contentBox, .container .detailBox .isp_box .contentBox {
+    padding: 0 1rem;
+    text-align: center;
+    border-right: none;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 0;
+  }
+  .container .detailBox .location_box {
+    padding-top: 0;
+  }
+}
+/*# sourceMappingURL=index.css.map */
