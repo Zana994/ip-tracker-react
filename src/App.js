@@ -17,18 +17,18 @@ function App() {
   const [fetchIp, setFetchIp] = useState('')
 
   useEffect(() => {
-    fetch(`http://ip-api.com/json/${fetchIp}`)
+    fetch(`https://ipapi.co/${fetchIp}/json/`)
     .then(results => results.json())
     .then(data => {
       setIpData({
-        ipAddress: data.query,
+        ipAddress: data.ip,
         city: data.city,
-        country: data.country,
-        zip: data.zip,
-        time: data.timezone,
-        isp: data.isp
+        country: data.country_name,
+        zip: data.postal,
+        time: data.utc_offset,
+        isp: data.org
       })
-      setCoordinates({x: data.lat, y: data.lon})
+      setCoordinates({x: data.latitude, y: data.longitude})
     })
     .catch(error => {
       alert("Unable to get IP details")
