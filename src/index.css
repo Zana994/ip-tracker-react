@@ -194,7 +194,7 @@ body {
   background-color: white;
   position: absolute;
   top: 24vh;
-  z-index: 11;
+  z-index: 2;
 }
 
 .detailBox .address_box, .detailBox .location_box, .detailBox .time_box, .detailBox .isp_box {
