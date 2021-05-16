@@ -258,6 +258,7 @@ body {
     -webkit-box-pack: stretch;
         -ms-flex-pack: stretch;
             justify-content: stretch;
+    top: 20%;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     width: 140px;
@@ -285,7 +286,7 @@ body {
     width: 10%;
   }
   .container .detailBox {
-    top: 22vh;
+    top: 24%;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     width: 50%;
@@ -332,6 +333,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 65%;
+    top: 18%;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     padding-left: 0;
