@@ -194,7 +194,7 @@ body {
   border-radius: 10px;
   background-color: white;
   position: absolute;
-  top: 11rem;
+  top: 25%;
   z-index: 2;
 }
 
@@ -258,7 +258,7 @@ body {
     -webkit-box-pack: stretch;
         -ms-flex-pack: stretch;
             justify-content: stretch;
-    top: 9rem;
+    top: 20%;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     width: 140px;
@@ -273,7 +273,7 @@ body {
 
 @media only screen and (max-width: 559px) {
   .container .header {
-    height: 40vh;
+    height: 280px;
   }
   .container .header .search-box {
     width: 75%;
@@ -286,7 +286,7 @@ body {
     width: 10%;
   }
   .container .detailBox {
-    top: 11rem;
+    top: 180px;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     width: 50%;
@@ -305,6 +305,9 @@ body {
 @media only screen and (max-width: 425px) {
   .container #map {
     height: 500px;
+  }
+  .container .header {
+    height: 260px;
   }
   .container .header .search-box {
     width: 65%;
@@ -333,7 +336,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 65%;
-    top: 8.5rem;
+    top: 135px;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     padding-left: 0;
