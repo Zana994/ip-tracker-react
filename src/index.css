@@ -53,6 +53,7 @@ html {
   src: url(fonts/Rubik/static/Rubik-Light.ttf);
 }
 
+/* MIXIN */
 /* GENERAL */
 html {
   height: 100%;
