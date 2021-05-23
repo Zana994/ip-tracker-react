@@ -7,7 +7,7 @@ const Header = ({newDetails}) => {
         <div className="header">
             <p> IP Address Tracker </p>
             <div className="search-box">
-            <input type='text' placeholder='Search for any IP address' value={newValue}
+            <input type='text' placeholder='Search for any IP address' aria-label='Search' value={newValue}
               onChange={(e) => { setNewValue(e.target.value)}}></input>
             <span onClick={() => {newDetails(newValue); setNewValue('')}}></span>
         </div>
