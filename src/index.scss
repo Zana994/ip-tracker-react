@@ -52,6 +52,20 @@ html {
     src: url(fonts/Rubik/static/Rubik-Light.ttf);
 }
 
+@mixin flex-pos($content, $items) {
+    display: flex;
+    justify-content: $content;
+    align-items: $items;
+}
+@mixin text-style($size, $family, $color, $transform: unset) {
+    font: {
+        size: $size;
+        family: $family;
+    };
+    color: $color;
+    text-transform: $transform;
+}
+
 /* GENERAL */
 html { height: 100%;}
 body {
@@ -67,9 +81,7 @@ body {
     max-width: 1440px;
     min-height: 100%;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-pos(center, center);
     flex-direction: column;
     #map {
         width: 100%;
@@ -77,10 +89,7 @@ body {
         z-index: 1; 
     }
     .name {
-        color: hsl(0, 0%, 59%);
-        font-size: 10px;
-        font-family: Medium;
-        text-transform: uppercase;
+        @include text-style(0.65rem, Medium, hsl(0, 0%, 59%), uppercase);
         letter-spacing: 1px;
     }
 }
@@ -91,22 +100,18 @@ body {
     background: url(images/pattern-bg.png) center center no-repeat;
     background-size: cover;
     p { 
-        color: white;
+        @include text-style(inherit, Medium, white);
         letter-spacing: 1px;
         padding: 2rem 0;
-        font-family: Medium;
         text-align: center;
     }
     .search-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-pos(center, center);
         input {
             width: 400px;
             height: 40px;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            padding-left: 17px;
+            border-radius: 10px 0 0 10px;
+            padding-left: 1rem;
             &:hover {
                 cursor: pointer;
             }
@@ -120,8 +125,7 @@ body {
             height: 40px;
             position: relative;
             background-color: black;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
+            border-radius: 0 10px 10px 0;
             &::after {
                 content: '';
                 position: absolute;
@@ -140,11 +144,10 @@ body {
 }
 
 .detailBox {
-   display: flex;
+   @include flex-pos(space-between, center);
    width: 800px;
    min-height: 120px;
    height: fit-content;
-   justify-content: space-between;
    border-radius: 10px;
    background-color: white;
    position: absolute;
@@ -152,15 +155,11 @@ body {
    z-index: 2;
    .address_box, .location_box, .time_box, .isp_box {
     width: 200px;
-    color: hsl(0, 0%, 59%);
-    font-size: 13px;
-    font-family: Medium;
+    @include text-style(0.8rem, Medium, hsl(0, 0%, 59%));
     letter-spacing: 1px;
     padding: 1.2rem 0 0 1.2rem;
     .contentBox {
-        color: hsl(0, 0%, 17%);
-        font-size: 15px;
-        font-family: Bold;
+        @include text-style(0.95rem, Bold, hsl(0, 0%, 17%));
         height: fit-content;
         min-height: 60px;
         width: 180px;
@@ -188,24 +187,22 @@ body {
 @media only screen and (max-width: 870px) {
     .container {
         .detailBox { 
-        .contentBox { font-size: 13px;}
+        .contentBox { font-size: 0.8rem;}
         }
     }
 }
-@media only screen and (max-width: 745px) {
+@media only screen and (max-width: 768px) {
     .container {
-        .detailBox {
-        .contentBox { font-size: 13px;}
-        }
+        .header { height: 260px;}
+        .detailBox { top: 200px;}
     }
 }
 @media only screen and (max-width: 650px) {
     .container {
         .detailBox {
+            top: 160px;
             width: 75%;
             flex-wrap: wrap;
-            justify-content: stretch;
-            top: 20%;
             .address_box, .location_box, .time_box, .isp_box { width: 140px;}
             .isp_box { padding-top: 0;}
             .time_box {
@@ -217,7 +214,6 @@ body {
 @media only screen and (max-width: 559px) {
     .container {
         .header {
-            height: 280px;
             .search-box { 
                 width: 75%;
                 margin: auto;
@@ -226,7 +222,6 @@ body {
             }
         }
         .detailBox {
-            top: 180px;
             .address_box, .location_box, .time_box, .isp_box { width: 50%;}
             .location_box {
                 .contentBox { border-right: none;}
@@ -240,20 +235,19 @@ body {
 }
 @media only screen and (max-width: 425px) {
     .container {
-        #map { height: 500px;}
+        //#map { height: 500px;}
         .header {
-            height: 260px;
             .search-box{
                 width: 65%;
                 input { width: 87%;}
                 span { width: 13%;}
-                ::placeholder { font-size: 12px;}
+                ::placeholder { font-size: 0.8rem;}
             }
         }
         .detailBox {
             flex-direction: column;
             width: 65%;
-            top: 135px;
+            top: 145px;
             .address_box, .location_box, .time_box, .isp_box { 
                 padding-left: 0;
                 width: 100%;

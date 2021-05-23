@@ -92,9 +92,9 @@ body {
 }
 
 .container .name {
-  color: #969696;
-  font-size: 10px;
+  font-size: 0.65rem;
   font-family: Medium;
+  color: #969696;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -107,10 +107,12 @@ body {
 }
 
 .header p {
+  font-size: inherit;
+  font-family: Medium;
   color: white;
+  text-transform: unset;
   letter-spacing: 1px;
   padding: 2rem 0;
-  font-family: Medium;
   text-align: center;
 }
 
@@ -129,9 +131,8 @@ body {
 .header .search-box input {
   width: 400px;
   height: 40px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding-left: 17px;
+  border-radius: 10px 0 0 10px;
+  padding-left: 1rem;
 }
 
 .header .search-box input:hover {
@@ -160,8 +161,7 @@ body {
   height: 40px;
   position: relative;
   background-color: black;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 0 10px 10px 0;
 }
 
 .header .search-box span::after {
@@ -183,14 +183,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 800px;
   min-height: 120px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   border-radius: 10px;
   background-color: white;
   position: absolute;
@@ -200,17 +203,19 @@ body {
 
 .detailBox .address_box, .detailBox .location_box, .detailBox .time_box, .detailBox .isp_box {
   width: 200px;
-  color: #969696;
-  font-size: 13px;
+  font-size: 0.8rem;
   font-family: Medium;
+  color: #969696;
+  text-transform: unset;
   letter-spacing: 1px;
   padding: 1.2rem 0 0 1.2rem;
 }
 
 .detailBox .address_box .contentBox, .detailBox .location_box .contentBox, .detailBox .time_box .contentBox, .detailBox .isp_box .contentBox {
-  color: #2b2b2b;
-  font-size: 15px;
+  font-size: 0.95rem;
   font-family: Bold;
+  color: #2b2b2b;
+  text-transform: unset;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -240,25 +245,25 @@ body {
 
 @media only screen and (max-width: 870px) {
   .container .detailBox .contentBox {
-    font-size: 13px;
+    font-size: 0.8rem;
   }
 }
 
-@media only screen and (max-width: 745px) {
-  .container .detailBox .contentBox {
-    font-size: 13px;
+@media only screen and (max-width: 768px) {
+  .container .header {
+    height: 260px;
+  }
+  .container .detailBox {
+    top: 200px;
   }
 }
 
 @media only screen and (max-width: 650px) {
   .container .detailBox {
+    top: 160px;
     width: 75%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: stretch;
-        -ms-flex-pack: stretch;
-            justify-content: stretch;
-    top: 20%;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     width: 140px;
@@ -272,9 +277,6 @@ body {
 }
 
 @media only screen and (max-width: 559px) {
-  .container .header {
-    height: 280px;
-  }
   .container .header .search-box {
     width: 75%;
     margin: auto;
@@ -284,9 +286,6 @@ body {
   }
   .container .header .search-box span {
     width: 10%;
-  }
-  .container .detailBox {
-    top: 180px;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     width: 50%;
@@ -303,12 +302,6 @@ body {
 }
 
 @media only screen and (max-width: 425px) {
-  .container #map {
-    height: 500px;
-  }
-  .container .header {
-    height: 260px;
-  }
   .container .header .search-box {
     width: 65%;
   }
@@ -319,16 +312,16 @@ body {
     width: 13%;
   }
   .container .header .search-box ::-webkit-input-placeholder {
-    font-size: 12px;
+    font-size: 0.8rem;
   }
   .container .header .search-box :-ms-input-placeholder {
-    font-size: 12px;
+    font-size: 0.8rem;
   }
   .container .header .search-box ::-ms-input-placeholder {
-    font-size: 12px;
+    font-size: 0.8rem;
   }
   .container .header .search-box ::placeholder {
-    font-size: 12px;
+    font-size: 0.8rem;
   }
   .container .detailBox {
     -webkit-box-orient: vertical;
@@ -336,7 +329,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 65%;
-    top: 135px;
+    top: 145px;
   }
   .container .detailBox .address_box, .container .detailBox .location_box, .container .detailBox .time_box, .container .detailBox .isp_box {
     padding-left: 0;
