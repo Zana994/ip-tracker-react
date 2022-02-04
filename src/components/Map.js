@@ -20,7 +20,13 @@ const Map = ({ coord }) => {
     }
 
     useEffect(() => {
+        if(coord.x !== null && coord.y !== null) {
         setPosition({x: coord.x, y: coord.y})
+        }
+        else { 
+            alert("Coordinates not found!");
+            setPosition({x: 0, y: 0})
+        }
 
     }, [coord.x, coord.y])
   

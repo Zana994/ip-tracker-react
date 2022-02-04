@@ -160,10 +160,13 @@ body {
     letter-spacing: 1px;
     padding: 1.2rem 0 0 1.2rem;
     .contentBox {
+        overflow: hidden;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
         @include text-style(0.95rem, Bold, hsl(0, 0%, 17%));
         height: fit-content;
         min-height: 60px;
-        width: 180px;
+        min-width: 180px;
         border-right: 1px solid hsl(0, 0%, 79%);
         margin-bottom: 1.2rem;
         padding: 0.6rem 1rem 0 0;
